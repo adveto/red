@@ -67,7 +67,7 @@
 	  	<input type="text" id="email" name="email" class="inp"><br><br>
 	  	<label for="telefone">Telefone ou Celular:</label>
 	  	<input type="text" id="email" name="telefone" class="inp"><br><br>
-	  	<a type="button" style="" class="btn" onclick="red();">Garantir Acesso</a>
+	  	<button class="btn" onclick="red();">Garantir Acesso</button>
 	</div>
 </body>
 
@@ -128,7 +128,7 @@
 			var nome = "&name=" + document.getElementById("nome").value;
 			var email = "&email=" + document.getElementById("email").value;
 			var telefone = "&phone=" + document.getElementById("telefone").value;
-			window.location.href = "https://mestredarenda.com/checkout/checkout-167.html? + query + nome + email + telefone";
+			window.location.replace("https://mestredarenda.com/checkout/checkout-167.html? + query + nome + email + telefone");
 		}
 
 	</script>

@@ -40,6 +40,7 @@
 		}
 
 		.btn{
+			text-decoration: none;
 			background-color:red;
 			border:none;
 			color:white;
@@ -66,7 +67,7 @@
 	  	<label for="email">E-mail:</label>
 	  	<input type="text" id="email" name="email" class="inp"><br><br>
 	  	<label for="telefone">Telefone ou Celular:</label>
-	  	<input type="text" id="email" name="telefone" class="inp"><br><br>
+	  	<input type="text" id="telefone" name="telefone" class="inp"><br><br>
 	  	<button class="btn" onclick="red();">Garantir Acesso</button>
 	</div>
 </body>
@@ -123,13 +124,26 @@
 		}
 
 
-		function red(){
-			var query = location.search.slice(1);
-			var nome = "&name=" + document.getElementById("nome").value;
-			var email = "&email=" + document.getElementById("email").value;
-			var telefone = "&phone=" + document.getElementById("telefone").value;
-			window.location.replace("https://mestredarenda.com/checkout/checkout-167.html? + query + nome + email + telefone");
-		}
+		
+
+			
+
+			function red(){
+
+				var query = location.search.slice(1);
+				var nome = "&name=" + document.getElementById("nome").value;
+				var email = "&email=" + document.getElementById("email").value;
+				var telefone = "&phone=" + document.getElementById("telefone").value;
+
+				window.location.replace('https://go.perfectpay.com.br/PPU38CK8DE3?' + query + nome + email + telefone);
+			}
+
+			
+
+
 
 	</script>
+
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>

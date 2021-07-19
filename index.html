@@ -25,23 +25,24 @@
 			border-radius: 8px;
 			height: 25px;
 			border:  solid #bfa6a6 1px;
-			margin-top: 5px;
+			margin-top: 9px;
+			height: 45px;
 		}
 
 		#for{
-
-			
+			margin-top: 80px;
 			justify-content: center;
 			flex-direction: column;
 			align-self: center;
 			width: 50%;
 			margin: auto;
 			display: none;
+			padding-bottom: 50px;
 		}
 
 		.btn{
 			text-decoration: none;
-			background-color:red;
+			background-color:#e3cb00;
 			border:none;
 			color:white;
 			width:fit-content;
@@ -49,6 +50,29 @@
 			font-size: 1.3rem;
 			border-radius: 10px;
 			margin: auto;
+			line-height: 28px;
+
+		}
+
+		#linha{
+			border-top: solid #fbffcd 2px;
+			width: 90%;
+			height: 1px;
+			margin: auto;
+			margin-bottom: 50px;
+			margin-top: 50px;
+			display: none;
+		}
+
+		.btn:hover{
+			background-color: #b29f04 ;
+		}
+
+		@media screen and (max-width: 500px) {
+			#for{
+				width: 90%;
+			}
+
 		}
 
 	</style>
@@ -60,18 +84,16 @@
 		<img src="kloader.gif" style="width: 100%" id="img">
 	</div>
 	
+	<div id="linha" ></div>
 
 	<div id="for">
-	  	<label for="nome">Nome Completo:</label>
-	  	<input type="text" id="nome" name="nome" class="inp"><br><br>
 	  	<label for="email">E-mail:</label>
 	  	<input type="text" id="email" name="email" class="inp"><br><br>
-	  	<label for="telefone">Telefone ou Celular:</label>
+	  	<label for="telefone">Whats:</label>
 	  	<input type="text" id="telefone" name="telefone" class="inp"><br><br>
-	  	<button class="btn" onclick="red();">Garantir Acesso</button>
+	  	<button class="btn" onclick="red();">CLIQUE AQUI PARA TER ACESSO IMEDIATO A SUA LICENÇA DO APP MESTRE DA RENDA</button>
 	</div>
 </body>
-
 
 	<script type="text/javascript">
 		
@@ -83,10 +105,10 @@
 
 				setTimeout(
 			      function(){ 
-			        document.getElementById("txt").innerHTML="Verificando Disponibilidade no Servidor...";
+			        document.getElementById("txt").innerHTML="Checando disponibilidade por vagas...";
 			        setTimeout(
 			          function(){ 
-			            document.getElementById("txt").innerHTML="87% Ocupado..."; 
+			            document.getElementById("txt").innerHTML="Menos de 3% do Total de Licenças estão disponíveis atualmente..."; 
 			          }, 1500
 			        );
 			      }, 3000
@@ -97,10 +119,11 @@
 			        document.getElementById("txt").innerHTML="Reservando Vaga no Servidor...";
 			        setTimeout(
 			          function(){ 
-			            document.getElementById("txt").innerHTML="Insira Seus Dados..."; 
+			            document.getElementById("txt").innerHTML="Informe Seus Dados Para Registrar Sua Licença..."; 
 			            setTimeout(
           				function(){ 
             				mostrar("for");
+            				mostrar("linha");
             				esconder("img");
             				
           				}, 1500);
@@ -109,8 +132,6 @@
 			      }, 4500
 			    );
 		 
-		
-
  		function esconder(id) {
   			var x = document.getElementById(id);
   	  		x.style.display = "none";
@@ -123,19 +144,14 @@
    			x.style.display = "flex";
 		}
 
-
-		
-
-			
-
 			function red(){
 
 				var query = location.search.slice(1);
-				var nome = "&name=" + document.getElementById("nome").value;
+		
 				var email = "&email=" + document.getElementById("email").value;
 				var telefone = "&phone=" + document.getElementById("telefone").value;
 
-				window.location.replace('https://go.perfectpay.com.br/PPU38CK8DE3?' + query + nome + email + telefone);
+				window.location.replace('https://go.perfectpay.com.br/PPU38CK8DE3?' + query + email + telefone);
 			}
 
 			

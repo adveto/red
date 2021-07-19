@@ -27,6 +27,10 @@
 			border:  solid #bfa6a6 1px;
 			margin-top: 9px;
 			height: 45px;
+			font-size: 1.5rem;
+			padding-left: 14px;
+			padding-right: 14px;
+
 		}
 
 		#for{
@@ -87,10 +91,10 @@
 	<div id="linha" ></div>
 
 	<div id="for">
-	  	<label for="email">E-mail:</label>
-	  	<input type="text" id="email" name="email" class="inp"><br><br>
+	  	<label for="email" >E-mail:</label>
+	  	<input type="text" id="email" name="email" class="inp" placeholder="nome@email.com" pattern="/@/" autofocus><br><br>
 	  	<label for="telefone">Whats:</label>
-	  	<input type="text" id="telefone" name="telefone" class="inp"><br><br>
+	  	<input type="text" id="telefone" name="telefone" class="inp" placeholder="(xx) x xxxx-xxxx" maxlength="17"><br><br>
 	  	<button class="btn" onclick="red();">CLIQUE AQUI PARA TER ACESSO IMEDIATO A SUA LICENÇA DO APP MESTRE DA RENDA</button>
 	</div>
 </body>
@@ -116,17 +120,12 @@
 
 			    setTimeout(
 			      function(){ 
-			        document.getElementById("txt").innerHTML="Reservando Vaga no Servidor...";
 			        setTimeout(
 			          function(){ 
-			            document.getElementById("txt").innerHTML="Informe Seus Dados Para Registrar Sua Licença..."; 
-			            setTimeout(
-          				function(){ 
-            				mostrar("for");
+			            document.getElementById("txt").innerHTML="Informe Seus Dados Para Registrar Sua Licença...";
+			            mostrar("for");
             				mostrar("linha");
-            				esconder("img");
-            				
-          				}, 1500);
+            				esconder("img"); 
 			          }, 1500
 			        );
 			      }, 4500
@@ -155,7 +154,9 @@
 			}
 
 			
-
+		function mascaraDeTelefone( telefone ){
+    		const textoAtual = telefone.value;
+		}
 
 
 	</script>

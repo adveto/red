@@ -80,6 +80,10 @@
 		}
 
 	</style>
+
+
+
+
 </head>
 <body>
 	<h1 style="text-align:center;" id="txt">Checando a disponibilidade de vagas...</h1>
@@ -92,9 +96,9 @@
 
 	<div id="for">
 	  	<label for="email" >E-mail:</label>
-	  	<input type="text" id="email" name="email" class="inp" placeholder="nome@email.com" pattern="/@/" autofocus><br><br>
+	  	<input type="text" id="email" name="email" class="inp" placeholder="nome@email.com"  autofocus><br><br>
 	  	<label for="telefone">Whats:</label>
-	  	<input type="text" id="telefone" name="telefone" class="inp" placeholder="(xx) x xxxx-xxxx" maxlength="17"><br><br>
+	  	<input type="text" id="telefone" name="telefone" class="inp" placeholder="(xx) x xxxx-xxxx" maxlength="16" value=""><br><br>
 	  	<button class="btn" onclick="red();">CLIQUE AQUI PARA TER ACESSO IMEDIATO A SUA LICENÇA DO APP MESTRE DA RENDA</button>
 	</div>
 </body>
@@ -153,14 +157,76 @@
 				window.location.replace('https://go.perfectpay.com.br/PPU38CK8DE3?' + query + email + telefone);
 			}
 
+		var input = document.querySelector('#telefone');
+
+		var t = 0;
+
+		
+
+		input.addEventListener('input', function()
+		{
+			var q = input.value.length-1;
+			n = input.value[q];
 			
-		function mascaraDeTelefone( telefone ){
-    		const textoAtual = telefone.value;
-		}
+
+			if(isNaN(Number(n))){
+				if (t != 0) {
+					t--;
+				} 
+
+				input.value = input.value.substring(0, q);
+				
+				
+			}else{
+
+
+			if (input.value.length == 2) {
+				
+				if (t==0) {
+					input.value = "("+input.value+") ";
+					t++;
+				}else{
+					t = 0;
+				}
+				
+			}
+
+			if (input.value.length == 6) {
+
+				if (t==1) {
+					input.value = input.value+" ";
+					t++;
+				}else{
+					t = 1;
+				}
+				
+				
+			}
+
+			if (input.value.length == 11) {
+				if (t==2) {
+					input.value = input.value+"-";
+					t++;
+				}else{
+					t = 2;
+				}
+
+			}
+
+		
+    	}
+		});
+
+			
+		
+    
 
 
 	</script>
 
 	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
 </html>
